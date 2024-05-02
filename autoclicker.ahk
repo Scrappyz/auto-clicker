@@ -6,20 +6,23 @@ InstallMouseHook
 Alt & c::
 {
     static toggle := false
-    if toggle  ; This means an underlying thread is already running the loop below.
-    {
+    if(toggle) { ; This means an underlying thread is already running the loop below.
         toggle := false  ; Signal that thread's loop to stop.
         return  ; End this thread so that the one underneath will resume and see the change made by the line above.
     }
     ; Otherwise:
     toggle := true
-    Loop
-    {
+    frequency := InputBox("Set frequency (in milliseconds)").Value
+    if(frequency == "") {
+        frequency := 1
+    }
+
+    Loop {
         ; The next four lines are the action you want to repeat (update them to suit your preferences):
         if(GetKeyState("LButton", "P")) {
             Click "Down Left"
             Click "Up Left"
-            sleep 1
+            sleep frequency
         }
         ; But leave the rest b+elow unchanged.
         if not toggle  ; The user signaled the loop to stop by pressing the hotkey again.
