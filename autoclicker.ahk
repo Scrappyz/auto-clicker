@@ -1,5 +1,5 @@
 #Requires AutoHotkey v2.0
-LCtrl & LShift::ExitApp
+Esc::ExitApp
 InstallMouseHook
 
 #MaxThreadsPerHotkey 3
