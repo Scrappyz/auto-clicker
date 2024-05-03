@@ -12,7 +12,7 @@ Alt & c::
     }
     ; Otherwise:
     toggle := true
-    frequency := InputBox("Set frequency (in milliseconds)").Value
+    frequency := InputBox("Set frequency (in milliseconds)", "Frequency", "w200 h100").Value
     frequency := RegExReplace(frequency, "[^0-9]", "")
     if(frequency == "") {
         frequency := 1
