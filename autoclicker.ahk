@@ -13,6 +13,7 @@ Alt & c::
     ; Otherwise:
     toggle := true
     frequency := InputBox("Set frequency (in milliseconds)").Value
+    frequency := RegExReplace(frequency, "[^0-9]", "")
     if(frequency == "") {
         frequency := 1
     }
