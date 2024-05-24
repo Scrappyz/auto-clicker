@@ -1,5 +1,5 @@
 #Requires AutoHotkey v2.0
-Esc::ExitApp
+~LShift & Esc::ExitApp
 InstallMouseHook
 
 #MaxThreadsPerHotkey 3
